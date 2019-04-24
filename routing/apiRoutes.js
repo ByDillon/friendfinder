@@ -4,12 +4,12 @@ var friendData = require("../app/data/friends.js");
 module.exports = function (app) {
 
     //Route to get Friends Data
-    app.get("../app/data/friends.js", function (request, response) {
+    app.get("../app/data/friends", function (request, response) {
         response.json(friendData);
     });
 
     //Route to post Friends Data
-    app.post("../app/data/friends.js", function (request, response) {
+    app.post("../app/data/friends", function (request, response) {
         var matchedFriend = calculateMatch(request.body);
         friendData.push(request.body);
         response.json(matchedFriend);
